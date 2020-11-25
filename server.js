@@ -22,7 +22,9 @@ function newConnection(socket){
 
   function mouseMessage(dataReceived){
 
-    console.log(dataReceived);
+    console.log(socket.client.id, dataReceived);
+
+    socket.broadcast.emit("mouseBroadcast", dataReceived);
 
   }
 }
