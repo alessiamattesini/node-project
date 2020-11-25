@@ -41,7 +41,7 @@ function newConnection(socket){
   }
 
   function randomRadius (){
-    var radius=Math.random()*10+10;
+    var radius=Math.random()*50;
     return radius;
   }
 }

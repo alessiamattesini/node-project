@@ -26,9 +26,9 @@ function newConnection() {
 
 function drawOtherMouse (data){
 push();
-  fill(data.color);
-  noStroke();
-  ellipse(data.x, data.y, data.radius);
+  stroke(data.color);
+  noFill();
+  rect(data.x, data.y, data.radius, data.radius*3);
 pop();
 }
 
@@ -39,19 +39,30 @@ function preload(){
 function setup() {
   createCanvas(windowWidth,windowHeight)
   // put setup code here
-  background('purple');
+  background('black');
+
 }
 
 function draw() {
   // put drawing code here
+  push();
+  fill(myColor);
+  textFont('Montserrat');
+  textAlign('center');
+  textSize(15);
+  text('Move your mouse to draw, click and move to interrupt the line.', width/2, height/2);
+  text('Draw with your friends.', width/2, height/2+50);
+  pop();
 }
 
 function mouseMoved (){
-push();
-  fill(myColor);
-  noStroke();
-  ellipse(mouseX, mouseY, myRadius);
+if (mouseIsPressed==false){
+  push();
+  stroke(myColor);
+  noFill();
+  rect(mouseX, mouseY, myRadius, myRadius*3);
   pop();
+}
   let message = {
     x: mouseX,
     y: mouseY,
