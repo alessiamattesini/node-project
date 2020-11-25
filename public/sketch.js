@@ -28,7 +28,7 @@ function drawOtherMouse (data){
 push();
   stroke(data.color);
   noFill();
-  rect(data.x, data.y, data.radius, data.radius*3);
+  ellipse(data.x, data.y, data.radius, data.radius*2.5);
 pop();
 }
 
@@ -60,7 +60,7 @@ if (mouseIsPressed==false){
   push();
   stroke(myColor);
   noFill();
-  rect(mouseX, mouseY, myRadius, myRadius*3);
+  rect(mouseX, mouseY, myRadius, myRadius*2.5);
   pop();
 }
   let message = {
