@@ -21,6 +21,7 @@ function newConnection(socket){
   socket.on("mouse", mouseMessage);
   let clientColor = getRandomColor();
   socket.emit("color", clientColor);
+  socket.emit("radius", randomRadius());
 
   function mouseMessage(dataReceived){
 
@@ -37,5 +38,10 @@ function newConnection(socket){
       color += letters[Math.floor(Math.random()*16)];
     }
     return color;
+  }
+
+  function randomRadius (){
+    var radius=Math.random()*10+10;
+    return radius;
   }
 }
